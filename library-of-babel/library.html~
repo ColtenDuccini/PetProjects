@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- A three.js demo, based on the story "The Library of Babel" by Jorge Luis Borges-->
+    <!-- Code and models by Colten Duccini -->
+    <title>The Library of Babel - A three.js demo</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/three.min.js"></script>
+    <meta charset="utf-8">
+    <style>
+      body {
+      //  margin: 0;
+      //  overflow: hidden;
+          font-family: monospace;
+          text-transform: uppercase;
+          color: white;
+          font-size: 10px;
+          background-color: black;
+      
+      }
+      #container {
+          overflow: hidden;
+      }
+      .page {
+          width: 44%;
+          float: left;
+          z-index: 1;
+      }
+      #turn {
+          position:relative;
+          left:850px;
+      }
+      canvas{
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="3d_output"></div>
+      <button id="back" onclick="if (current_page >= 2) {current_page--; printPage(book[--current_page], 'output2');printPage(book[--current_page], 'output1'); current_page++}">Previous page</button>
+      <button id="turn" onclick="if (current_page < PAGES_PER_BOOK - 1){printPage(book[++current_page], 'output1');printPage(book[++current_page], 'output2');}">Next page</button>
+    <div id="container">
+       <div class="page" id="output1"></div>
+       <div class="page" id="output2"></div>
+    </div>
+
+    <script type="text/javascript" src="js/book.js"></script>
+    <!-- <script type="text/javascript" src="js/babel.js"></script> -->
+    
+  </body>
+</html>
