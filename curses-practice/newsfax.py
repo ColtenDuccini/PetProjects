@@ -1,4 +1,6 @@
 ## -*- coding: utf-8
+## A script that displays a rotating set of news headlines
+## in the style of teletext services like Ceefax
 
 import curses, time, locale, feedparser, thread, threading, datetime
 from threading import Timer
